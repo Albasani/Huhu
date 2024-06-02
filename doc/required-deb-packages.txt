@@ -1,0 +1,8 @@
+libdigest-sha1-perl
+libi18n-acceptlanguage-perl
+libmail-sendmail-perl
+libmailtools-perl
+libnet-irc-perl
+libnews-article-perl
+perl-doc
+spamassassin

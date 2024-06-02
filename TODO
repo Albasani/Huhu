@@ -1,0 +1,12 @@
+- change to status "deleted" immediately, write reply in separate step, use set_reply()
+- trigger poster.pl through the web-interface (Unix socket?)
+- check whether crosspost is to a moderated group
+- make configuration file configurable at run time
+- provide internal user management and login form
+- installation program
+- warn about cancels and supersedes
+- lock down state of old posts (spam, deleted)
+- don't send mail to .invalid, .example, etc.
+- support utf-8 (database, HTML input, HTML output, mail output)
+- script to generate summary.txt from configuration files
+- announce incoming submissions to moderator, but go sure that only one mail per day is sent

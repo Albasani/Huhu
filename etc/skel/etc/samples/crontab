@@ -1,0 +1,29 @@
+#
+# Note: the right hand side of assignments is a literal string, i.e.
+# variable references like "$HOME" are not expanded.
+#
+# MAILTO=administrator@webinterface.site
+HUHU_DIR="@HUHU_DIR@"
+PERL5LIB="@HUHU_DIR@"
+CONFIG="@USER_HOME@/etc/public.conf"
+BINDIR="@HUHU_DIR@/bin"
+# HTMLDIR=/srv/www/html
+
+# mailget.pl reads incoming mail via POP3, stores them in database.
+# If you use procmailrc then you don't need this.
+# */5 * * * *	"$BINDIR/mailget.pl" "$CONFIG"
+
+# Reads database, sends outgoing messages via NNTP.
+*/5 * * * *	"$BINDIR/poster.pl" "$CONFIG"
+
+# Show number of posts and reaction time.
+# 3 * * * *	"$BINDIR/statistics.pl" "$CONFIG" > "$HTMLDIR/stats/stats.txt"
+
+# Remove old records from database
+5 3 * * *	"$BINDIR/removeold.pl" "$CONFIG"
+
+# Reads database, sends reply to authors of pending messages.
+# 10 * * * *	"$BINDIR/autoreply.pl" "$CONFIG"
+
+# Reads database, announces incoming mail in IRC channel.
+# @reboot	"$BINDIR/ircbot.sh" start

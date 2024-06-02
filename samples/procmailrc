@@ -1,0 +1,19 @@
+#
+# Save this file as $HOME/.procmailrc
+#
+LOGFILE=$HOME/procmail.log
+PATH=/usr/bin:/bin
+VERBOSE=yes
+PERL5LIB=/srv/www/huhu
+
+# save mails in backup directory
+:0 c
+backup
+
+# trim backup directory
+:0 ic
+| cd backup && rm -f dummy `ls -t msg.* | sed -e 1,32d`
+
+# add incoming mail to database
+:0
+| /srv/www/huhu/bin/read-mail.pl /srv/www/SAMPLE/home/etc/SAMPLE_pub.config

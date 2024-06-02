@@ -1,0 +1,7 @@
+# Dependencies for CPAN modules
+apt-get install libnet-irc-perl
+apt-get install liblog-log4perl-perl
+
+# Modules only available through CPAN
+cpan i News::Article::Cancel
+cpan i Text::Language::Guess

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- $Id: index.html 301 2011-09-28 04:43:06Z alba $ -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
+<head>
+<title>Huhu Overview</title>
+<style type="text/css" media="all">@import "huhu.css";</style>
+</head>
+<body><div id="huhuContents">
+
+<h2>Huhu</h2>
+
+<p>Huhu is a web application to moderate Usenet groups.</p>
+
+<h3>Basic workflow</h3>
+<ol>
+  <li>Emails are sent to the submission address</li>
+  <li>Retrieved mails are stored in database</li>
+  <li>The web application visualizes the stored mails</li>
+  <li>Human moderators use the web application to classify mail:
+  <ul>
+    <li>Approved submissions are sent to the news server</li>
+    <li>For rejected submissions a rejection notice is sent to the author via mail</li>
+    <li>Submissions can also be silently ignored</li>
+    <li>Mails classified as spam are silently ignored but also train the spamfilter</li>
+  </ul></li>
+</ol>
+
+<h3>Requirements</h3>
+<ul>
+  <li>Some kind of Unix (Huhu is developed on Ubuntu Linux)</li>
+  <li>A way to execute jobs in periodic intervals, e.g. crond</li>
+  <li>perl 5 (and a list of additional perl modules)</li>
+  <li>A web server cabaple of executing perl scripts (Huhu is developed on Apache/mod_perl)</li>
+  <li>A MySQL database</li>
+  <li>A mail box accessible through POP3 or procmail</li>
+  <li>NNTP access to a news server that allows to set the header "Approved:"</li>
+</ul>
+
+<h3>Features</h3>
+<ul>
+  <li>Spam filtering with <tt>Mail::SpamAssassin</tt>.</li>
+  <li>Articles can be signed with a PGP key, using <tt>News::Article::sign_pgpmoose</tt>.</li>
+  <li>Submissions can be moderated automatically through procmail rules.</li>
+  <li>An IRC bot that notifies an IRC channel about pending submissions.</li>
+  <li>Multiple instances of Huhu can be run with a single installation.</li>
+</ul>
+
+<h3>Missing features</h3>
+<ul>
+  <li>Documentation. (Harald M&auml;dl has written a
+<a href="http://usenet-moderation.net/moderation_software_huhu.htm"
+>German user's manual</a>, though.)</li>
+  <li>UNICODE. (Huhu currently uses ISO-8859-1 throughout.)</li>
+  <li>Web based installation. (Currently there is only <tt>sbin/create-procmail-user.sh</tt>).</li>
+</ul>
+
+<h3>Licence</h3>
+<p>Huhu is free software; you can redistribute it and/or modify it under the terms
+of the GNU General Public License as published by the Free Software Foundation;
+either version 3 of the License, or (at your option) any later version.</p>
+
+<h3>Availability</h3>
+<p>The code is stored in a <a href="http://subversion.tigris.org/">subversion</a>
+repository.</p>
+
+<dl>
+  <dt>Anonymous read-only access</dt>
+  <!-- svn://albasani.net/huhu/trunk/ -->
+  <dd><a href="svn://svn.schnuerpel.eu/huhu/trunk/"
+  >svn://svn.schnuerpel.eu/huhu/trunk/</a></dd>
+
+  <dt>Web based revision browser</dt>
+  <!-- http://albasani.net/viewvc.cgi/?root=huhu -->
+  <dd><a href="http://svn.schnuerpel.eu/viewvc.cgi/?root=huhu"
+  >http://svn.schnuerpel.eu/viewvc.cgi/?root=huhu</a></dd>
+
+  <dt>Project home page</dt>
+  <!-- http://albasani.net/huhu/ -->
+  <dd><a href="http://huhu.albasani.net/">http://huhu.albasani.net/</a></dd>
+</dl>
+
+<h3>History</h3>
+<p>Roman Racine developed Huhu in 2007 to moderate de.soc.familie.vaeter.<br>
+In 2009 he adapted it to easily run multiple instances.<br>
+In autumn 2009 Alexander Bartolich took over development, adding support for CSS, multiple languages, and procmail.</p>
+
+</div></body></html>

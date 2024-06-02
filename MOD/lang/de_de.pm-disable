@@ -1,0 +1,22 @@
+#!/usr/bin/perl -w
+#
+# $Id: de_de.pm-disable 64 2009-09-02 19:42:41Z alba $
+#
+# This file is encoded in iso-8859-1
+#
+package MOD::lang::de_de;
+
+use warnings;
+use strict;
+use MOD::lang::de_at();
+
+@MOD::Utils::ISA    = qw(Exporter);
+@MOD::Utils::EXPORT = qw();
+@MOD::Utils::EXPORT_OK = qw( get_translator  );
+                                               
+sub get_translator($)
+{
+  return MOD::lang::de_at::get_translator(@_);
+}
+
+1;

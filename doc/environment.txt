@@ -1,0 +1,63 @@
+== Operation ==
+
+Required by all commands.
+
+HUHU_DIR
+
+== Installation ==
+
+Additional variables required by "sbin/create-procmail-user.sh".
+
+DIR and URL point to the same location. 
+
+HUHU_WWW_BASE_DIR
+HUHU_WWW_BASE_URL
+
+  DIR and URL point to the same location, but in different ways.
+  DIR is a file system path while URL is the base of the address
+  used in a web browser.
+
+  Example:
+    HUHU_WWW_BASE_DIR="/srv/www/albasani.net/html/huhu"
+    HUHU_WWW_BASE_URL="http://albasani.net/huhu"
+
+HUHU_EMAIL_DOMAIN
+
+  Right-hand part of the email address used to submit posts.
+
+  Example:
+    HUHU_EMAIL_DOMAIN="albasani.net"
+
+HUHU_EMAIL_LIST
+
+  This is a file name. If variable is defined then the submission
+  address is appended to the file.
+
+  Example:
+    HUHU_EMAIL_LIST="/etc/amavis/spam_lovers"
+
+HUHU_EMAIL_POSTFIX_ALIAS
+
+  This is the name of a file defining virtual aliases for Postfix.
+  If variable is defined then the submission address and the user
+  name is appended to the file.
+
+  Example:
+    HUHU_EMAIL_POSTFIX_ALIAS="/etc/postfix/maps/virtual_alias"
+
+== Skeleton Templates ==
+
+Used internally by "sbin/create-procmail-user.sh" when copying
+template files from directory "etc/skel".
+
+MODERATED_GROUP
+MODERATED_GROUP_ABBR
+MYSQL_DB
+MYSQL_PASSWORD
+MYSQL_TABLE
+MYSQL_USERNAME
+TODAY
+USER_HOME
+USER_ID
+USER_NAME
+WWW_DIR

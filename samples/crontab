@@ -1,0 +1,24 @@
+MAILTO=administrator@webinterface.site
+PERL5LIB=/srv/www/huhu
+CONFIG=/srv/www/SAMPLE/home/etc/SAMPLE_pub.config
+BINDIR=/srv/www/huhu/bin
+HTMLDIR=/srv/www/SAMPLE/html
+
+# mailget.pl reads incoming mail via POP3, stores them in database.
+# If you use procmailrc then you don't need this.
+# */5 * * * *	$BINDIR/mailget.pl $CONFIG
+
+# Reads database, sends outgoing messages via NNTP.
+*/5 * * * *	$BINDIR/poster.pl $CONFIG;
+
+# Show number of posts and reaction time.
+3 * * * *	$BINDIR/statistics.pl $CONFIG > $HTMLDIR/stats/stats.txt
+
+# Remove old records from database
+5 3 * * *	$BINDIR/removeold.pl $CONFIG
+
+# Reads database, sends reply to sender of mail that message is in queue.
+# 10 * * * *	$BINDIR/autoreply.pl $CONFIG
+
+# Reads database, announces incoming mail in IRC channel.
+# @reboot	$BINDIR/ircbot.pl $CONFIG

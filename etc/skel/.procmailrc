@@ -1,0 +1,18 @@
+HUHU_DIR="@HUHU_DIR@"
+
+CONFIG="${HOME}/etc/public.conf"
+LOGFILE="${HOME}/var/procmail.log"
+PATH="/usr/bin:/bin:${HUHU_DIR}/bin"
+PERL5LIB="${HUHU_DIR}"
+VERBOSE=yes
+
+# save mails in backup directory
+:0 c
+backup
+
+# trim backup directory
+:0 ic
+| cd backup && rm -f dummy `ls -t msg.* | sed -e 1,32d`
+
+:0
+| "${HUHU_DIR}/bin/read-mail.pl" "-config=${CONFIG}" -stdin

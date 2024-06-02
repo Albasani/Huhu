@@ -1,0 +1,45 @@
+SYSTEM USER ACCOUNTS
+
+* UID_ROOT ... A priviledged user able to create other users.
+* UID_WWW  ... The user id of the web server process.
+* UID_HUHU ... The user that executes cron scripts and procmail scripts.
+
+DATABASE USER ACCOUNTS
+
+* DB_UID_ROOT ... This account is used by UID_ROOT to set up huhu.
+* DB_UID_HUHU ... The account used by Huhu itself.
+
+NEWS SERVER ACCOUNTS
+
+* NNTP_UID_HUHU ... Used by UID_HUHU to post articles.
+
+PROGRAMS
+
+* Shell scripts executed as UID_ROOT
+  Used to set up Huhu instances
+  DB_UID_ROOT 
+  sbin/create-procmail-user.sh
+
+* Procmail script executed as UID_HUHU
+  DB_UID_HUHU
+  bin/read-mail.pl
+
+* Crontab scripts executed as UID_HUHU
+  DB_UID_HUHU, NNTP_UID_HUHU
+  bin/*
+
+* Scripts executed by web server as UID_WWW
+  Scripts can be run as true CGIs or within mod_perl
+  DB_UID_HUHU
+  cgi-bin/*
+
+FLOW OF CONFIGURATION DATA
+
+The path to the public configuration file is specified through environment
+variable HUHU_PUB_CONFIG.
+
+TODO
+
+Authentication is done by the web server. It is recommended to use
+"AuthType Digest", so that passwords are not transferred through the
+net in plain text.

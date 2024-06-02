@@ -1,0 +1,208 @@
+@charset "ISO-8859-1";
+/*
+ * $Id: huhu.css 286 2011-02-18 00:18:19Z alba $
+ *
+ * #d3d3d3 = lightgray
+ */
+body, html {
+  height:100%;
+  text-align:left;
+  margin:0;
+  padding:0;
+  font-family:sans-serif;
+  background-color:#ccccff;
+  color:black;
+}
+
+h1 {
+  font-size:132%;
+}
+
+table.huhuPostList,
+table.huhuArticle {
+  border-collapse:separate;
+  border-spacing:0;
+  empty-cells:show;
+  background-color:white;
+}
+
+table.huhuPostList td,
+table.huhuPostList th,
+table.huhuArticle th,
+table.huhuArticle td {
+  padding:2px;
+  margin:0;
+  border-left:1px #FFFFFF solid;
+  border-top:1px #FFFFFF solid;
+  border-right:1px #000000 solid;
+  border-bottom:1px #000000 solid;
+}
+
+table.huhuPostList th {
+  text-align:center;
+  background-color:#d3d3d3;
+}
+
+div.huhuContents {
+  display:block;
+  float:left; /* to keep huhuVersion aligned on left border */
+  width:84%;
+  margin-top:0.5em;
+  margin-left:0.5em;
+  margin-right:0.5em;
+  /* border:1px solid black; */
+}
+
+ul.huhuMainMenu0 {
+  width:12%;
+  background-color:#d3d3d3;
+  margin-left:0.5em;
+  /* no margin-right, use margin-left of div.huhuContents instead */
+  margin-top:0.5em;
+  margin-bottom:0;
+  padding:0;
+  float:left; /* menu on the left, huhuContents on the right */
+  /* border:1px solid black; */
+}
+
+ul.huhuMainMenu0 span {
+  padding-left:0.5em;
+  padding-top:0.5ex;
+  padding-right:0.5em;
+  padding-bottom:0.5ex;
+  display:block;
+  font-weight:bold;
+}
+
+ul.huhuMainMenu1 {
+  margin:0;
+  padding:0;
+}
+
+ul.huhuMainMenu1 span {
+  font-weight:normal;
+  margin:0;
+  padding:0;
+}
+
+ul.huhuMainMenu0 li,
+ul.huhuMainMenu1 li {
+  text-indent:0;
+  list-style-type:none;
+}
+
+ul.huhuMainMenu0 li {
+  font-size:80%;
+  border-top:1px #000000 solid;
+  border-left:1px #000000 solid;
+  border-right:1px #FFFFFF solid;
+  border-bottom:1px #FFFFFF solid;
+}
+
+ul.huhuMainMenu1 li {
+  font-weight:normal;
+  border-top:1px #FFFFFF solid;
+  border-left:1px #FFFFFF solid;
+  border-right:1px #000000 solid;
+  border-bottom:1px #000000 solid;
+  padding:4px;
+}
+
+div.huhuNavigation {
+  padding-top:0.5ex;
+  padding-bottom:0;
+  margin-top:1ex;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+}
+
+div.huhuNavigation span {
+  border-top:1px #FFFFFF solid;
+  border-left:1px #FFFFFF solid;
+  border-right:1px #000000 solid;
+  border-bottom:1px #000000 solid;
+  font-size:80%;
+  padding:4px;
+}
+
+ul.huhuMainMenu0 li a,
+div.huhuNavigation span a {
+  /* remove underlined attribute for "a href" */
+  text-decoration:none;
+  /* remove color distinction between visited and unvisited links */
+  color:black;
+}
+
+ul.huhuMainMenu0 li a:hover,
+div.huhuNavigation span a:hover {
+  /* while mouse is hovering over "a href" */
+  color:#FFFFFF;
+  text-decoration:none;
+  background-color:black;
+}
+
+div.huhuVersion,
+div.huhuArticleInfo {
+  margin-top:1ex;
+  font-size:80%;
+  font-style:italic;
+}
+
+table.huhuArticle {
+  /* Opera and IE applie margin above caption
+   * Mozilla between caption and table */
+  margin-top:2mm;
+
+  border-top:1px #000000 solid;
+  border-left:1px #000000 solid;
+  width:100%;
+}
+
+table.huhuArticle th,
+table.huhuArticle td {
+  padding-left:1ex;
+  padding-right:1ex;
+}
+
+tr.huhuArticleHeader th,
+tr.huhuArticleHeader td {
+  border-bottom:1px #000000 solid;
+}
+
+tr.huhuArticleHeader th {
+  background-color:#d3d3d3;
+  border-right:1px #000000 solid;
+  text-align:right;
+  width:10em;
+}
+
+tr.huhuArticleHeader td {
+  background-color:#FFFFCC;
+}
+
+div.huhuReason,
+div.huhuErrorMessage {
+  margin-bottom:1ex;
+  padding:1ex;
+  background-color:white;
+  border:1px #000000 solid;
+}
+
+tr.huhuFlag {
+  background-color:#FFCCCC;
+}
+tr.huhuOdd {
+  background-color:#FCFCFC;
+}
+tr.huhuEven {
+  background-color:#FFFFCC;
+}
+td.huhuNoRows {
+  background-color:#ccccff;
+}
+
+div.huhuSubtitle {
+  font-size:80%;
+  margin-bottom:0.5ex;
+}

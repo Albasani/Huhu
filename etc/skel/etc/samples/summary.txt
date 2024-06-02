@@ -1,0 +1,68 @@
+== Email ==
+
+The submission address is <@SUBMISSION_EMAIL@>.
+
+Messages are directly processed by procmail, so you cannot access it
+with POP or IMAP. (Messages are saved in a backup directory as plain
+files, though.)
+
+You can test Huhu by sending posts directly to this address.
+When tests are finished you should send a message stating that
+<@SUBMISSION_EMAIL@> is the new submission address of
+@MODERATED_GROUP@ to <moderators-request@isc.org>.
+
+== Web Interface ==
+
+The web interface consists of two parts. The public part is accessible
+to everybody. It just displays the approved posts.
+
+   @HUHU_WWW_BASE_URL@/@WWW_DIR@/public.pl
+
+And then there is the private part. This is protected with a login.
+using the HTTP digest system.
+
+   @HUHU_WWW_BASE_URL@/@WWW_DIR@/modtable.pl
+
+HTTP digest is safe to use on unencrypted connections, but for additional
+paranoia above URLs are also available through https (with a self signed
+certificate).
+
+There is currently no way to handle user management through the web
+interface. I created one account for you:
+
+Username:
+Password:
+
+== Test Mode ==
+
+At the moment this instance of Huhu is in test mode. Approved messages
+are sent to albasani.test.moderated.  This is an internal group, i.e.
+it is not sent to peers. You need an albasani-account to read it.
+
+When you are satisfied with your tests please give me a note.
+I will then switch to @MODERATED_GROUP@.
+
+== Configurable Options ==
+
+The following settings are set to default values. 
+Please give me a note if you want to have them changed.
+
+  # Value of header "Approved:" in posts
+  approve_string=@SUBMISSION_EMAIL@
+
+  # Right hand side of message IDs in in posts.
+  # Empty value means that the news server generates the ID.
+  mid_fqdn=
+
+  # Value of header "From:" in rejection notices.
+  mailfrom=@SUBMISSION_EMAIL@
+
+== Usenet Account ==
+
+Username: @SUBMISSION_EMAIL@
+Password: 
+Server  : news.albasani.net
+
+It has permissions to send approved posts to albasani.test.moderated
+and @MODERATED_GROUP@. Use it to bypass the moderation (e.g. send FAQs
+or cancel messages) or to read the internal albasani.* groups.

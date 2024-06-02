@@ -1,0 +1,4 @@
+#
+# Save this file as $HOME/.forward to enable $HOME/.procmailrc
+#
+"|exec /usr/bin/procmail"
